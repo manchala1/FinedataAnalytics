@@ -10,9 +10,23 @@ const App = () => {
   const [username, setUsername] = useState("");
   const [user, setUser] = useState("");
   const [socket, setSocket] = useState(null);
+  const [socketConnected, setSocketConnected] = useState(false);
   useEffect(() => {
     setSocket(io("http://localhost:5000"));
   }, []);
+
+  useEffect(() => {
+    if (!socket) return;
+
+    socket.on("connect", () => {
+      console.log("socket connected");
+      setSocketConnected(socket.connected);
+    });
+    socket.on("disconnect", () => {
+      setSocketConnected(socket.connected);
+    });
+  }, [socket]);
+
   useEffect(() => {
     socket?.emit("newUser", user);
   }, [socket, user]);

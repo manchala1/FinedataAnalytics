@@ -7,7 +7,11 @@ import Settings from "../../img/settings.svg";
 const Navbar = ({ socket }) => {
   const [notifications, setNotifications] = useState([]);
   const [open, setOpen] = useState([]);
+
   useEffect(() => {
+    socket.on("getText", (data) => {
+      setNotifications((prev) => [...prev, data]);
+    });
     socket.on("getNotification", (data) => {
       setNotifications((prev) => [...prev, data]);
     });

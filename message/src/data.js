@@ -1,8 +1,8 @@
 export const posts = [
   {
     id: 1,
-    username: "john",
-    fullname: "John Keller",
+    username: "vaishnavi",
+    fullname: "Vaishnavi Manchala",
     userImg:
       "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     postImg:
@@ -10,8 +10,8 @@ export const posts = [
   },
   {
     id: 2,
-    username: "monica",
-    fullname: "Monica Stan",
+    username: "jahnavi",
+    fullname: "Jahnavi Manchala",
     userImg:
       "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     postImg:
